@@ -22,21 +22,27 @@
         </header>
 
         <div id="jogo">
+
+            <div id="placar">
+                <p id="pontosjogador1"></p>
+                <p id="pontosjogador2"></p>
+            </div>
+
             <div class="inputsJogo">
-                <div id="jogador">
+                <div id="jogador1">
                     <h3>Você</h3>
-                    <label for="escolhaJogador">Sua escolha: </label>
-                    <input type="text" id="escolhaJogador" required>
+                    <label for="escolhaJogador1">Sua escolha: </label>
+                    <input type="text" id="escolhaJogador1" required>
                 </div>
-                <div id="computador">
-                    <h3>Maquina</h3>
-                    <label for="escolhaJogador">Escolha da Maquina: </label>
-                    <p>Tesoura</p>
+                <div id="jogador2">
+                    <h3>Jogador 2</h3>
+                    <label for="escolhaJogador2">Escolha do Jogador 2: </label>
+                    <p id="escolhaJogador2"></p>
                 </div>
             </div>
-            <button id="butaoJogar">Jogar!</button>
-            <h2 id="resultado"></h2>
-            <button id="butaoRecomecar">Recomeçar!</button>
+            <button id="butaoJogar" onclick="jogar()">Jogar!</button>
+            <h3 id="resultado"></h3>
+            <button id="butaoRecomecar" onclick="location.reload()">Recomeçar!</button>
         </div>
 
     </div>

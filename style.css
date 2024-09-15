@@ -45,14 +45,14 @@ header img {
     justify-content: space-around;
 }
 
-#jogador, #computador {
+#jogador1, #jogador2 {
     margin: 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-#jogador input {
+#jogador1 input {
     height: 35px;
     width: 130px;
     color: #302e2f;
