@@ -17,23 +17,26 @@
     <div class="container">
         <header>
             <h1>Pedra, Papel e Tesoura</h1>
-            <img src="" alt="">
+            <img src="./assets/pedra-papel-tesoura.png" alt="">
 
         </header>
-        
-        <div id="Placar">
-            <h2></h2>
-        </div>
 
         <div id="jogo">
-            <div id="jogador">
-                <label for="escolhaJogador">Faça sua jogada: </label>
-                <input type="text" id="escolhaJogador">
-                <button type="button">Jogar</button>
+            <div class="inputsJogo">
+                <div id="jogador">
+                    <h3>Você</h3>
+                    <label for="escolhaJogador">Sua escolha: </label>
+                    <input type="text" id="escolhaJogador" required>
+                </div>
+                <div id="computador">
+                    <h3>Maquina</h3>
+                    <label for="escolhaJogador">Escolha da Maquina: </label>
+                    <p>Tesoura</p>
+                </div>
             </div>
-            <div id="computador">
-
-            </div>
+            <button id="butaoJogar">Jogar!</button>
+            <h2 id="resultado"></h2>
+            <button id="butaoRecomecar">Recomeçar!</button>
         </div>
 
     </div>

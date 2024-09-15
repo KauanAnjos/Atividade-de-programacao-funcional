@@ -35,20 +35,17 @@ function criarPlacar() {
 const atualizarPlacar = criarPlacar()
 
 function jogar() {
-    try {
         const jogador1Escolha = prompt("Vamos Jogar? Escolha Pedra, paapel ou tesoura (ou 'sair' para finalizar):").trim()
         if (jogador1Escolha.toLowerCase() === 'sair') {
-            console.log("Jogo finalizado. Bye bye :)")
-            return
+            return console.log("Jogo finalizado. Bye bye :)")
         }
     }
-}
 
 const padronizandoEscolha = jogador1Escolha.charAt(0).toUpperCase() + jogador1Vitorias.slice(1).toLowerCase()
 
 if (!listaJogadas.includes(padronizandoEscolha)) {
     console.log("hm, parece que algo deu errado. Escolha novamente.")
-    return jogar()
+    jogar()
 }
 
 const jogador2Escolha = listaJogadas[Math.floor(Math.random() * listaJogadas.length)]
@@ -59,10 +56,5 @@ console.log("ATENCION PARA O RESULTADO: ${vencedor}")
 
 const {jogador1Vitorias, jogador2Vitorias} = atualizarPlacar(vencedor)
 console.log("Placar: Jogador 1 ${jogador1Vitorias}, Jogador 2: ${jogador2Vitorias}\n")
-
-jogar()  {catch (error) {
-    console.error("hmm, parece que ocorreu um erro inesperado.\n Tente novamente em outro momento :)")
-    }
-}
 
 jogar()
