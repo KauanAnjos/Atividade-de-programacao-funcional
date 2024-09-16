@@ -8,10 +8,11 @@ function decideGanhador(jogador1, jogador2, regraVencedor) {
 
 const regra = (jogador1, jogador2) => {
     if (jogador1 === jogador2) return "Ninguém ganhou! Deu empate :)"
+    console.log(jogador1, jogador2)
     if ((jogador1 === "pedra" && jogador2 === "tesoura") || 
         (jogador1 === "tesoura" && jogador2 === "papel") ||
         (jogador1 === "papel" && jogador2 === "pedra")) {
-            return "Parabéns! Jogador 1 venceu essa rodada!!!"
+            return "Parabéns! Você venceu essa rodada!!!"
         } else {
             return "Parabéns! Jogador 2 essa rodada venceu!!!"
         }
@@ -22,11 +23,12 @@ function criarPlacar() {
     let jogador2Vitorias = 0
 
     return function(vencedor) {
-        if (vencedor === "Parabéns! Você venceu essa rodada!!!") {
+        if (vencedor === "Parabéns! Jogador 1 venceu essa rodada!!!") {
             jogador1Vitorias++
-        } else if (vencedor === "Parabéns! o Jogador 2 venceu essa rodada!!!") {
+        } else if (vencedor === "Parabéns! Jogador 2 essa rodada venceu!!!") {
             jogador2Vitorias++
         }
+        console.log(jogador1Vitorias, jogador2Vitorias)
         return {jogador1Vitorias, jogador2Vitorias}
     }
 }
@@ -54,7 +56,6 @@ function jogar() {
         console.log(`ATENCION PARA O RESULTADO: ${vencedor}`)
         
         const {jogador1Vitorias, jogador2Vitorias} = atualizarPlacar(vencedor)   
-        document.getElementById('pontosjogador1').innerHTML = `${jogador1Vitorias}`
-        document.getElementById('pontosjogador2').innerHTML = `${jogador2Vitorias}`
         console.log(`Placar: Jogador 1 ${jogador1Vitorias}, Jogador 2: ${jogador2Vitorias}`)
+        document.getElementById('placar').textContent = `${jogador1Vitorias} : ${jogador2Vitorias}`
     }
